@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <title>Baixar do YouTube</title>
+</head>
+<body style="font-family: sans-serif; text-align: center; margin-top: 50px;">
+  <h2>🔽 Baixar do YouTube</h2>
+  <form method="POST">
+    <input name="url" placeholder="Cole o link do vídeo" size="50" required><br><br>
+    <select name="formato">
+      <option value="video">Vídeo (MP4)</option>
+      <option value="audio">Áudio (MP3)</option>
+    </select><br><br>
+    <button type="submit">Baixar</button>
+  </form>
+  <p>{{ mensagem }}</p>
+
+  {% if filename %}
+    <a href="{{ url_for('download_file', filename=filename) }}">⬇️ Clique aqui para baixar o arquivo</a>
+  {% endif %}
+</body>
+</html>
